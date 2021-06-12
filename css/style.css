@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+}
+
+.header {
+  display: flex;
+  background-color: brown;
+  color: white;
+  padding: 1rem 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.project-title {
+  font-size: 3.2rem;
+  margin-right: 40%;
+}
