@@ -2,19 +2,33 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .header {
   display: flex;
   background-color: brown;
   color: white;
-  padding: 1rem 0;
-  justify-content: space-around;
+  padding: 1rem 4rem;
+  justify-content: space-between;
   align-items: center;
 }
 
 .project-title {
   font-size: 3.2rem;
   margin-right: 40%;
+}
+
+a {
+  color: white;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: .875em;
+}
+
+.svg-inline--fa.fa-w-12 {
+  width: .75em;
 }
