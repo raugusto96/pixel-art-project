@@ -18,7 +18,7 @@ body {
 
 .project-title {
   font-size: 3.2rem;
-  margin-right: 30%;
+  margin-right: 40%;
 }
 
 a {
@@ -49,6 +49,7 @@ a {
   border-radius: 0.5em;
   border: white 1px groove;
   box-shadow: 1px 14px 93px 2px rgba(0, 0, 0, 0.41);
+  margin-bottom: 20px;
 }
 
 .input-color-collection em {
@@ -108,5 +109,12 @@ a {
 .button {
   margin: 5px;
   border-radius: 10%;
+  border: 1px solid grey;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.selected {
+  border: lime 3px groove;
 }
