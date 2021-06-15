@@ -95,12 +95,12 @@ buttonHeader.addEventListener('click', () => {
 // Change class select in buttons
 const divButtons = document.getElementById('buttons');
 divButtons.addEventListener('click', (event) => {
-  const assistant = event;
-  const classToRemove = document.getElementsByClassName('selected')[0];
-  if (assistant.target !== divButtons) {
-    classToRemove.classList.remove('selected');
-    assistant.target.classList.add('selected');
-  }
+const assistant = event;
+const classToRemove = document.getElementsByClassName('selected')[0];
+if (assistant.target !== divButtons) {
+  classToRemove.classList.remove('selected');
+  assistant.target.classList.add('selected');
+}
 });
 
 // Color pixel with selected color
@@ -117,6 +117,7 @@ const boardSize = document.getElementById('board-size');
 const pixelSize = document.getElementById('pixel-size');
 boardSize.value = 30;
 pixelSize.value = 10;
+
 
 function adjustBoard() {
   let pixel = pixelSize.value + 'px';
@@ -146,23 +147,24 @@ function clearBoard() {
 }
 
 // Set mouse over color pixel
-function mouseOverPixel(event) {
-  const divPixels = document.getElementById('pixel-board');
-  const selectedColor = document.querySelector('.selected');
-  divPixels.addEventListener('mouseover', (event) => {
-      if (event.target !== divPixels) {
-    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
-    }
-  });
-}
+// function mouseOverPixel(event) {
+//   const divPixels = document.getElementById('pixel-board');
+//   const selectedColor = document.querySelector('.selected');
+//   console.log(selectedColor);
+//   divPixels.addEventListener('mouseover', (event) => {
+//       if (event.target !== divPixels) {
+//     event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+//     }
+//   });
+// }
 
-// Set mouse leave color pixel
-function mouseLeavePixel(event) {
-  const divPixels = document.getElementById('pixel-board');
-  divPixels.addEventListener('mouseout', (event) => {
-    event.target.style.backgroundColor = 'white';
-  });
-}
+// // Set mouse leave color pixel
+// function mouseLeavePixel(event) {
+//   const divPixels = document.getElementById('pixel-board');
+//   divPixels.addEventListener('mouseout', (event) => {
+//     event.target.style.backgroundColor = 'white';
+//   });
+// }
 
 window.onload = () => {
   insertColorToButton();
@@ -176,6 +178,6 @@ window.onload = () => {
   
   clearBoard();
 
-  mouseOverPixel();
-  mouseLeavePixel();
+  // mouseOverPixel();
+  // mouseLeavePixel();
 }
