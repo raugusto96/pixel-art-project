@@ -147,24 +147,23 @@ function clearBoard() {
 }
 
 // Set mouse over color pixel
-// function mouseOverPixel(event) {
-//   const divPixels = document.getElementById('pixel-board');
-//   const selectedColor = document.querySelector('.selected');
-//   console.log(selectedColor);
-//   divPixels.addEventListener('mouseover', (event) => {
-//       if (event.target !== divPixels) {
-//     event.target.style.backgroundColor = selectedColor.style.backgroundColor;
-//     }
-//   });
-// }
+function mouseOverPixel(event) {
+  const divPixels = document.getElementById('pixel-board');
+  divPixels.addEventListener('mouseover', (event) => {
+    const selectedColor = document.querySelector('.selected');
+      if (event.target !== divPixels) {
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    }
+  });
+}
 
 // // Set mouse leave color pixel
-// function mouseLeavePixel(event) {
-//   const divPixels = document.getElementById('pixel-board');
-//   divPixels.addEventListener('mouseout', (event) => {
-//     event.target.style.backgroundColor = 'white';
-//   });
-// }
+function mouseLeavePixel(event) {
+  const divPixels = document.getElementById('pixel-board');
+  divPixels.addEventListener('mouseout', (event) => {
+    event.target.style.backgroundColor = 'white';
+  });
+}
 
 window.onload = () => {
   insertColorToButton();
@@ -178,6 +177,6 @@ window.onload = () => {
   
   clearBoard();
 
-  // mouseOverPixel();
-  // mouseLeavePixel();
+  mouseOverPixel();
+  mouseLeavePixel();
 }
