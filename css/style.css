@@ -16,6 +16,10 @@ body {
   font-weight: 600;
 }
 
+.header input {
+  width: 40px;
+}
+
 .project-title {
   font-size: 3.2rem;
   margin-right: 40%;
@@ -28,11 +32,11 @@ a {
 }
 
 .svg-inline--fa.fa-w-14 {
-  width: .875em;
+  width: 1.575em;
 }
 
 .svg-inline--fa.fa-w-12 {
-  width: .75em;
+  width: 1.15em;
 }
 
 #color-collection {
@@ -103,7 +107,7 @@ a {
 #buttons {
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
 }
 
 .button {
@@ -117,4 +121,27 @@ a {
 
 .selected {
   border: lime 3px groove;
+}
+
+.pixel-board {
+  margin: auto;
+  background: rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 14px 93px 2px rgba(0, 0, 0, 0.41);
+}
+
+.pixel {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  float: left;
+  text-align: center;
+}
+
+form > input,
+label {
+  margin: 5px;
+  padding: 5px;
+  width: 40px;
+  border: 0;
+  cursor: pointer;
 }

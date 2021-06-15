@@ -54,28 +54,15 @@ const buttonsArray = [
   button10,
 ];
 
+// Set colors to buttons
 function insertColorToButton() {
   for (let index in inputsArray) {
     buttonsArray[index].style.backgroundColor = inputsArray[index].value;
   }
 }
 
-insertColorToButton();
-
-function createExitButton() {
-  const divColors = document.querySelector('.input-color-collection');
-  const eraseButton = document.createElement('button');
-  eraseButton.innerHTML = 'X';
-  eraseButton.id = 'erase-button';
-  eraseButton.classList.add('erase-button');
-  divColors.appendChild(eraseButton);
-}
-
-createExitButton();
-
-const colorNumberInput = document.getElementById('color-number');
+// Add event to appear input colors container
 const selectColors = document.getElementById('select-color');
-
 selectColors.addEventListener('click', () => {
   const collectionColors = document.querySelector('.input-color-collection');
   if (collectionColors.style.display === 'flex') {
@@ -85,8 +72,8 @@ selectColors.addEventListener('click', () => {
   }
 });
 
+// Add event to close appeared container
 const exitButton = document.getElementById('erase-button');
-
 exitButton.addEventListener('click', () => {
   const collectionColors = document.querySelector('.input-color-collection');
   if (collectionColors.style.display === 'flex') {
@@ -94,37 +81,18 @@ exitButton.addEventListener('click', () => {
   }
 });
 
-function createColorButtons(number) {
-  for (let index = 0; index < number; index += 1) {
-    const divColorButtons = document.getElementById('buttons');
-    const newButtonColor = document.createElement('button');
-    newButtonColor.id = `button${index+1}`
-    newButtonColor.classList.add('button');
-    newButtonColor.style.width = '20px';
-    newButtonColor.style.height = '20px';
-    divColorButtons.appendChild(newButtonColor);
-  }
-}
-
-function verifyColorNumber() {
-  if (colorNumberInput < 1) {
-    createInputColors(1);
-    createColorButtons(1);
-  }
-  else if (colorNumberInput.value > 10) {
-    createInputColors(10);
-    createColorButtons(10);
+// Add event to hide/show header container
+const buttonHeader = document.getElementById('button-header');
+buttonHeader.addEventListener('click', () => {
+  const header = document.getElementById('header')
+  if (header.style.display === 'none') {
+    header.style.display = 'flex';
   } else {
-    createInputColors(colorNumberInput.value);
-    createColorButtons(colorNumberInput.value);
+    header.style.display = 'none';
   }
-}
+});
 
-function generateRandomNumberRgb() {
-  randomColor = Math.floor(Math.random()*16777215).toString(16);
-  return `#${randomColor}`;
-}
-
+// Change class select in buttons
 const divButtons = document.getElementById('buttons');
 divButtons.addEventListener('click', (event) => {
   const assistant = event;
@@ -135,13 +103,79 @@ divButtons.addEventListener('click', (event) => {
   }
 });
 
-const buttonHeader = document.getElementById('button-header');
-
-buttonHeader.addEventListener('click', () => {
-  const header = document.getElementById('header')
-  if (header.style.display === 'none') {
-    header.style.display = 'flex';
-  } else {
-    header.style.display = 'none';
+// Color pixel with selected color
+const pixelBoard = document.getElementById('pixel-board');
+pixelBoard.addEventListener('click', (event) => {
+  if (event.target !== pixelBoard) {
+    const selectedColor = document.querySelector('.selected');
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 });
+
+// Change pixel and board size
+const boardSize = document.getElementById('board-size');
+const pixelSize = document.getElementById('pixel-size');
+boardSize.value = 30;
+pixelSize.value = 10;
+
+function adjustBoard() {
+  let pixel = pixelSize.value + 'px';
+  let board = boardSize.value * pixelSize.value + boardSize.value * 2 + 'px';
+  let numberOfPixels = boardSize.value * boardSize.value;
+  pixelBoard.innerHTML = '';
+  pixelBoard.style.width = board;
+  pixelBoard.style.height = board;
+  for (let index = 0; index < numberOfPixels; index += 1) {
+    let newPixel = document.createElement('div');
+    newPixel.classList.add('pixel');
+    newPixel.style.width = pixel;
+    newPixel.style.height = pixel;
+    document.getElementById('pixel-board').appendChild(newPixel);
+  }
+}
+
+// Clear colors in board
+function clearBoard() {
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', () => {
+    const pixels = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+// Set mouse over color pixel
+function mouseOverPixel(event) {
+  const divPixels = document.getElementById('pixel-board');
+  const selectedColor = document.querySelector('.selected');
+  divPixels.addEventListener('mouseover', (event) => {
+      if (event.target !== divPixels) {
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    }
+  });
+}
+
+// Set mouse leave color pixel
+function mouseLeavePixel(event) {
+  const divPixels = document.getElementById('pixel-board');
+  divPixels.addEventListener('mouseout', (event) => {
+    event.target.style.backgroundColor = 'white';
+  });
+}
+
+window.onload = () => {
+  insertColorToButton();
+  for (let input of inputsArray) {
+    input.addEventListener('input', insertColorToButton);
+  }
+  
+  adjustBoard();
+  pixelSize.addEventListener('input', adjustBoard);
+  boardSize.addEventListener('input', adjustBoard);
+  
+  clearBoard();
+
+  mouseOverPixel();
+  mouseLeavePixel();
+}
