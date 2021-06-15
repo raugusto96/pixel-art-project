@@ -103,21 +103,12 @@ if (assistant.target !== divButtons) {
 }
 });
 
-// Color pixel with selected color
-const pixelBoard = document.getElementById('pixel-board');
-pixelBoard.addEventListener('click', (event) => {
-  if (event.target !== pixelBoard) {
-    const selectedColor = document.querySelector('.selected');
-    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
-  }
-});
 
 // Change pixel and board size
 const boardSize = document.getElementById('board-size');
 const pixelSize = document.getElementById('pixel-size');
 boardSize.value = 30;
 pixelSize.value = 10;
-
 
 function adjustBoard() {
   let pixel = pixelSize.value + 'px';
@@ -146,24 +137,37 @@ function clearBoard() {
   });
 }
 
-// Set mouse over color pixel
-function mouseOverPixel(event) {
-  const divPixels = document.getElementById('pixel-board');
-  divPixels.addEventListener('mouseover', (event) => {
-    const selectedColor = document.querySelector('.selected');
-      if (event.target !== divPixels) {
-    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
-    }
-  });
-}
+// Color pixel with selected color
+let clicked = false;
+const pixelBoard = document.getElementById('pixel-board');
+pixelBoard.addEventListener('click', (event) => {
+  event.preventDefault();
+  const selectedColor = document.querySelector('.selected');
+  if (event.target !== pixelBoard) {
+    event.target.style.backgroundColor = selectedColor;
+    clicked = true;
+  }
+});
 
-// // Set mouse leave color pixel
-function mouseLeavePixel(event) {
-  const divPixels = document.getElementById('pixel-board');
-  divPixels.addEventListener('mouseout', (event) => {
-    event.target.style.backgroundColor = 'white';
-  });
-}
+// Set mouse over color pixel
+pixelBoard.addEventListener('mouseover', (event) => {
+  event.preventDefault();
+  if (event.target !== pixelBoard) {
+    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  }
+});
+
+// Set mouse leave color pixel
+pixelBoard.addEventListener('mouseout', (event) => {
+  event.preventDefault();
+  if (event.target !== pixelBoard) {
+    if (clicked === true) {
+      clicked = false;
+    } else {
+      event.target.style.backgroundColor = '';
+    }
+  }
+});
 
 window.onload = () => {
   insertColorToButton();
@@ -176,7 +180,4 @@ window.onload = () => {
   boardSize.addEventListener('input', adjustBoard);
   
   clearBoard();
-
-  mouseOverPixel();
-  mouseLeavePixel();
 }
