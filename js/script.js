@@ -138,36 +138,39 @@ function clearBoard() {
 }
 
 // Color pixel with selected color
-let clicked = false;
+// let clicked = false;
 const pixelBoard = document.getElementById('pixel-board');
+
 pixelBoard.addEventListener('click', (event) => {
   event.preventDefault();
   const selectedColor = document.querySelector('.selected');
   if (event.target !== pixelBoard) {
-    event.target.style.backgroundColor = selectedColor;
-    clicked = true;
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    // clicked = true;
+    // console.log(event.target.style.backgroundColor);
   }
 });
 
 // Set mouse over color pixel
-pixelBoard.addEventListener('mouseover', (event) => {
-  event.preventDefault();
-  if (event.target !== pixelBoard) {
-    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-  }
-});
+// pixelBoard.addEventListener('mouseover', (event) => {
+//   event.preventDefault();
+//   if (event.target !== pixelBoard) {
+//     event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+//   }
+// });
 
 // Set mouse leave color pixel
-pixelBoard.addEventListener('mouseout', (event) => {
-  event.preventDefault();
-  if (event.target !== pixelBoard) {
-    if (clicked === true) {
-      clicked = false;
-    } else {
-      event.target.style.backgroundColor = '';
-    }
-  }
-});
+// pixelBoard.addEventListener('mouseout', (event) => {
+//   event.preventDefault();
+//   if (event.target !== pixelBoard) {
+//     if (clicked === true) {
+//       clicked = false;
+//     } else {
+//       event.target.style.backgroundColor = '';
+//     }
+//     // console.log('Não coloriu');
+//   }
+// });
 
 window.onload = () => {
   insertColorToButton();

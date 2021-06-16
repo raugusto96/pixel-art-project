@@ -137,6 +137,10 @@ a {
   text-align: center;
 }
 
+.pixel:hover {
+  border: 1px groove red;
+}
+
 form > input,
 label {
   margin: 5px;
