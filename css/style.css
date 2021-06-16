@@ -9,25 +9,17 @@ body {
   display: flex;
   background-color: brown;
   color: white;
-  padding: 1rem 4rem;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2rem;
   font-weight: 600;
 }
 
 .header input {
-  width: 40px;
-}
-
-.project-title {
-  font-size: 3.2rem;
-  margin-right: 40%;
+  width: 35px;
 }
 
 a {
   color: white;
-  font-size: 1.4em;
   cursor: pointer;
 }
 
@@ -47,17 +39,12 @@ a {
 .input-color-collection {
   display: flex;
   justify-content: center;
-  padding: 1rem;
   align-items: center;
   background-color: brown;
   border-radius: 0.5em;
   border: white 1px groove;
   box-shadow: 1px 14px 93px 2px rgba(0, 0, 0, 0.41);
   margin-bottom: 20px;
-}
-
-.input-color-collection em {
-  font-size: 0.8em;
 }
 
 .button-header {
@@ -85,23 +72,10 @@ a {
 }
 
 .color {
-  margin-right: 1rem;
   padding: 1px;
   border-radius: 0.3rem;
   height: 25px;
   width: 40px;
-}
-
-.color:hover {
-  border: lime 3px groove;
-}
-
-.erase-button {
-  width: 20px;
-  height: 20px;
-  color: brown;
-  font-weight: 600;
-  cursor: pointer;
 }
 
 #buttons {
@@ -135,17 +109,4 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   float: left;
   text-align: center;
-}
-
-.pixel:hover {
-  border: 1px groove red;
-}
-
-form > input,
-label {
-  margin: 5px;
-  padding: 5px;
-  width: 40px;
-  border: 0;
-  cursor: pointer;
 }

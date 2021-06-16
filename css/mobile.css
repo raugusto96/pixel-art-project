@@ -1,0 +1,21 @@
+header {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+.input-color-collection {
+  padding: 0.5rem;
+  margin-top: 20px;
+}
+
+.project-title {
+  display: none;
+}
+
+.color {
+  margin-right: 0.7rem;
+}
+
+#erase-button {
+  display: none;
+}

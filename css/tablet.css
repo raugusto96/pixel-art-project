@@ -1,0 +1,29 @@
+header {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+a {
+  font-size: 1em;
+}
+
+.project-title {
+  font-size: 2rem;
+  margin-right: 10%;
+}
+
+.input-color-collection {
+  padding: 1rem;
+}
+
+.color {
+  margin-right: 1rem;
+}
+
+.erase-button {
+  width: 20px;
+  height: 20px;
+  color: brown;
+  font-weight: 600;
+  cursor: pointer;
+}
