@@ -115,18 +115,13 @@
   text-align: center;
 }
 
-.main-content {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-
 .footer {
   align-items: center;
   background-color: brown;
   color: white;
   display: flex;
   font-weight: 600;
-  height: 6.8vh;
+  min-height: 6.8vh;
   justify-content: center;
   padding: 5px;
   margin-top: auto;
