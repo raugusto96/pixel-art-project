@@ -3,6 +3,10 @@
 .body {
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -64,11 +68,11 @@
   width: 120px;
   height: 30px;
   border: solid grey 1px;
-  margin: 0 auto;
   border-radius: 5px;
   cursor: pointer;
   color: brown;
   font-weight: 600;
+
 }
 
 .color {
@@ -93,10 +97,6 @@
   height: 20px;
 }
 
-.button:hover {
-  border: red 3px groove;
-}
-
 .selected {
   border: lime 3px groove;
 }
@@ -115,6 +115,11 @@
   text-align: center;
 }
 
+.main-content {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
 .footer {
   align-items: center;
   background-color: brown;
@@ -123,5 +128,6 @@
   font-weight: 600;
   height: 6.8vh;
   justify-content: center;
-  margin-top: 50px;
+  padding: 5px;
+  margin-top: auto;
 }

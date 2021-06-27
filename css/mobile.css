@@ -16,6 +16,10 @@ header {
   margin-right: 0.7rem;
 }
 
-#erase-button {
+.erase-button {
   display: none;
+}
+
+.footer {
+  font-size: 1rem;
 }

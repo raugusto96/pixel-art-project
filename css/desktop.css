@@ -20,6 +20,10 @@ a {
   border: 1px groove red;
 }
 
+.button:hover {
+  border: red 3px groove;
+}
+
 .color {
   margin-right: 1rem;
 }
@@ -34,4 +38,8 @@ a {
   color: brown;
   font-weight: 600;
   cursor: pointer;
+}
+
+.footer {
+  font-size: 1.5rem;
 }
