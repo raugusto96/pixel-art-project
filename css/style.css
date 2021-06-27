@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body {
+.body {
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
 }
@@ -18,7 +18,7 @@ body {
   width: 35px;
 }
 
-a {
+.header > a {
   color: white;
   cursor: pointer;
 }
@@ -31,7 +31,7 @@ a {
   width: 1.15em;
 }
 
-#color-collection {
+.color-collection {
   display: flex;
   justify-content: center;
 }
@@ -47,7 +47,7 @@ a {
   margin-bottom: 20px;
 }
 
-.button-header {
+.header .button-header {
   padding: 0.5%;
   background-color: rgb(204, 204, 204);
   border: none;
@@ -60,7 +60,7 @@ a {
   border: solid grey 1px;
 }
 
-#button-header {
+.button-header {
   width: 120px;
   height: 30px;
   border: solid grey 1px;
@@ -78,7 +78,7 @@ a {
   width: 40px;
 }
 
-#buttons {
+.buttons {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -91,6 +91,10 @@ a {
   cursor: pointer;
   width: 20px;
   height: 20px;
+}
+
+.button:hover {
+  border: red 3px groove;
 }
 
 .selected {
@@ -109,4 +113,15 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   float: left;
   text-align: center;
+}
+
+.footer {
+  align-items: center;
+  background-color: brown;
+  color: white;
+  display: flex;
+  font-weight: 600;
+  height: 6.8vh;
+  justify-content: center;
+  margin-top: 50px;
 }
