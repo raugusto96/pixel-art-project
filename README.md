@@ -1,4 +1,4 @@
-# Pixel Art Project
+## Boas vindas ao repositório do projeto Arte com Pixels!
 Este repositório contém um projeto desenvolvido enquanto pessoa estudante da Trybe 
 
 ## Habilidades
