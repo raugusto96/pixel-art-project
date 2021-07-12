@@ -17,4 +17,6 @@ Este repositório contém um projeto desenvolvido enquanto pessoa estudante da T
 
 ### Projeto finalizado em 15/06/2021
 
+![Project](./gif/project.gif)
+
 _[https://raugusto96.github.io/pixel-art-project/](https://raugusto96.github.io/pixel-art-project/)_
