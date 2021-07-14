@@ -19,4 +19,8 @@ Este repositório contém um projeto desenvolvido enquanto pessoa estudante da T
 
 ![Project](./gif/project.gif)
 
+---
+
+### Link para acessar o projeto
+
 _[https://raugusto96.github.io/pixel-art-project/](https://raugusto96.github.io/pixel-art-project/)_
